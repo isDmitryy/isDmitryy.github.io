@@ -1,0 +1,39 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding-block: $spacing-xl;
+
+  &__inner {
+    @include container;
+    @include flex-between;
+
+    @include mobile {
+      flex-direction: column;
+      gap: $spacing-md;
+      text-align: center;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    gap: $spacing-lg;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: var(--color-text-muted);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+
+  &__copy {
+    font-size: $font-size-sm;
+    color: var(--color-text-muted);
+  }
+}

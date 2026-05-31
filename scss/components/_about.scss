@@ -1,0 +1,30 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.about {
+  padding-block: $spacing-4xl;
+  background-color: var(--color-bg);
+
+  &__inner {
+    @include container;
+    max-width: 720px;
+  }
+
+  &__title {
+    margin-bottom: $spacing-2xl;
+    color: var(--color-text);
+  }
+
+  &__text {
+    font-size: $font-size-lg;
+    line-height: $line-height-loose;
+    color: var(--color-text-muted);
+    margin-bottom: $spacing-lg;
+
+    &:last-child {
+      margin-bottom: 0;
+      color: var(--color-accent);
+      font-weight: $font-weight-medium;
+    }
+  }
+}

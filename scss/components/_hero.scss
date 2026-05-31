@@ -1,0 +1,80 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.hero {
+  min-height: 100vh;
+  @include flex-center;
+  background-color: var(--color-bg);
+  padding-block: $spacing-4xl;
+
+  &__content {
+    @include container;
+    max-width: 800px;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    color: var(--color-text);
+    line-height: $line-height-tight;
+    margin-bottom: $spacing-lg;
+
+    @include tablet {
+      font-size: $font-size-3xl;
+    }
+
+    @include mobile {
+      font-size: $font-size-2xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-lg;
+    color: var(--color-text-muted);
+    line-height: $line-height-loose;
+    margin-bottom: $spacing-2xl;
+    max-width: 600px;
+    margin-inline: auto;
+
+    @include mobile {
+      font-size: $font-size-base;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: $spacing-md $spacing-xl;
+    background-color: var(--color-accent);
+    color: #0f0f0f;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    border-radius: $radius-md;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    &--secondary {
+      @extend .hero__btn;
+      background-color: transparent;
+      color: var(--color-text);
+      border: 1px solid var(--color-border);
+
+      &:hover {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+        background-color: transparent;
+      }
+    }
+  }
+}

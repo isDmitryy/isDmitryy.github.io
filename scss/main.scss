@@ -1,0 +1,18 @@
+// ============================================
+// MAIN.SCSS — точка входа
+// ============================================
+
+// 1. Базовые настройки
+@use "variables" as *;
+@use "mixins" as *;
+
+// 2. Сброс и основа
+@use "reset";
+@use "typography";
+
+// 3. Компоненты
+@use "components/header";
+@use "components/hero";
+@use "components/projects";
+@use "components/about";
+@use "components/footer";

@@ -1,0 +1,63 @@
+@use 'variables' as *;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: $font-size-4xl;
+}
+h2 {
+  font-size: $font-size-3xl;
+}
+h3 {
+  font-size: $font-size-2xl;
+}
+h4 {
+  font-size: $font-size-xl;
+}
+
+p {
+  line-height: $line-height-loose;
+  color: var(--color-text-muted);
+}
+
+// Утилитарные классы типографики
+.text-accent {
+  color: var(--color-accent);
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+@media (max-width: #{$bp-md}) {
+  h1 {
+    font-size: $font-size-3xl;
+  } // 40px на планшете
+  h2 {
+    font-size: $font-size-2xl;
+  } // 32px
+  h3 {
+    font-size: $font-size-xl;
+  } // 24px
+}
+
+@media (max-width: #{$bp-sm}) {
+  h1 {
+    font-size: $font-size-2xl;
+  } // 32px на телефоне
+  h2 {
+    font-size: $font-size-xl;
+  } // 24px
+  h3 {
+    font-size: $font-size-lg;
+  } // 18px
+}
