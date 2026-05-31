@@ -1,0 +1,36 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.scroll-top {
+  position: fixed;
+  bottom: $spacing-xl;
+  right: $spacing-xl;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #0f0f0f;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  border: none;
+  cursor: pointer;
+  @include flex-center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition:
+    opacity $transition-normal,
+    visibility $transition-normal,
+    transform $transition-normal;
+  z-index: 99;
+
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+  }
+}

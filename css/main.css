@@ -196,6 +196,9 @@ p {
 .header__link:hover {
   color: var(--color-accent);
 }
+.header__link.is-active {
+  color: var(--color-accent);
+}
 
 .theme-toggle {
   display: flex;
@@ -531,4 +534,35 @@ p {
 .footer__copy {
   font-size: 0.875rem;
   color: var(--color-text-muted);
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: #0f0f0f;
+  font-size: 1.125rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 99;
+}
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.scroll-top:hover {
+  background-color: var(--color-accent-hover);
 }/*# sourceMappingURL=main.css.map */
