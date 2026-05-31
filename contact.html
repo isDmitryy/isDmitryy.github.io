@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Frontend-разработчик. Делаю лендинги и сайты для бизнеса — адаптивно, без шаблонов, в срок."
+    />
+    <meta name="author" content="Дмитрий Неронов" />
+    <meta property="og:title" content="Дмитрий — Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Делаю сайты для бизнеса. Лендинги, визитки, интерактивные страницы."
+    />
+    <meta
+      property="og:image"
+      content="https://isdmitryy.github.io/images/og-image.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://isdmitryy.github.io/contact.html"
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="images/icons/logo.png" />
+    <link rel="apple-touch-icon" href="images/icons/logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      media="print"
+      onload="this.media = 'all'"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Контакты — Дмитрий Неронов</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__inner">
+        <a href="index.html" class="header__logo">
+          <img
+            src="images/icons/logo.png"
+            alt="Дмитрий — Frontend Developer"
+            width="32"
+            height="32"
+          />
+        </a>
+        <nav class="header__nav" aria-label="Основная навигация">
+          <ul class="header__list" id="nav-menu">
+            <li class="header__item">
+              <a href="index.html#hero" class="header__link">Главная</a>
+            </li>
+            <li class="header__item">
+              <a href="index.html#projects" class="header__link">Проекты</a>
+            </li>
+            <li class="header__item">
+              <a href="index.html#about" class="header__link">Обо мне</a>
+            </li>
+            <li class="header__item">
+              <a href="contact.html" class="header__link">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="burger"
+          aria-label="Открыть меню"
+          aria-expanded="false"
+          aria-controls="nav-menu"
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+        <button
+          class="theme-toggle"
+          aria-label="Переключить тему"
+          title="Переключить тему"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact__inner">
+          <h1 class="contact__title" id="contact-title">Написать мне</h1>
+          <p class="contact__subtitle">
+            Расскажи о своём проекте — отвечу в течение дня.
+          </p>
+
+          <form
+            class="contact-form"
+            name="contact"
+            action="https://formspree.io/f/xwvzjrqb"
+            method="POST"
+            novalidate
+          >
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="name">Имя</label>
+              <input
+                class="contact-form__input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Как тебя зовут?"
+                required
+                autocomplete="name"
+              />
+              <span class="contact-form__error" aria-live="polite"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="email">Email</label>
+              <input
+                class="contact-form__input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+              />
+              <span class="contact-form__error" aria-live="polite"></span>
+            </div>
+
+            <div class="contact-form__group">
+              <label class="contact-form__label" for="message">Сообщение</label>
+              <textarea
+                class="contact-form__input contact-form__input--textarea"
+                id="message"
+                name="message"
+                placeholder="Расскажи о проекте..."
+                rows="5"
+                required
+              ></textarea>
+              <span class="contact-form__error" aria-live="polite"></span>
+            </div>
+
+            <button class="contact-form__btn" type="submit">Отправить</button>
+
+            <p class="contact-form__success" aria-live="polite"></p>
+          </form>
+
+          <div class="contact__links">
+            <a
+              href="https://t.me/isDmitryy"
+              class="contact__link"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Telegram</a
+            >
+            <a
+              href="mailto:neronov.neronov-dmitriy@yandex.ru"
+              class="contact__link"
+              >Email</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <div class="footer__contacts">
+          <a
+            href="https://t.me/isDmitryy"
+            class="footer__link"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Telegram</a
+          >
+          <a
+            href="mailto:neronov.neronov-dmitriy@yandex.ru"
+            class="footer__link"
+            >Email</a
+          >
+        </div>
+        <p class="footer__copy">© 2025 Дмитрий Неронов</p>
+      </div>
+    </footer>
+    <button class="scroll-top" aria-label="Наверх" title="Наверх">↑</button>
+    <script src="js/main.js"></script>
+  </body>
+</html>

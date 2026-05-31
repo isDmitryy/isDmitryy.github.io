@@ -587,4 +587,127 @@ p {
 
 .fade-up--delay-3 {
   transition-delay: 0.3s;
+}
+
+.contact {
+  min-height: 100vh;
+  padding-block: 6rem;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact__inner {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+@media (max-width: 768px) {
+  .contact__inner {
+    padding-inline: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .contact__inner {
+    padding-inline: 1rem;
+  }
+}
+.contact__inner {
+  max-width: 640px;
+}
+.contact__title {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+}
+.contact__subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: 4rem;
+  font-size: 1.125rem;
+}
+.contact__links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.contact__link {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  transition: color 0.15s ease;
+}
+.contact__link:hover {
+  color: var(--color-accent);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.contact-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.contact-form__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+.contact-form__input {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: border-color 0.15s ease;
+  outline: none;
+}
+.contact-form__input::-moz-placeholder {
+  color: var(--color-text-muted);
+}
+.contact-form__input::placeholder {
+  color: var(--color-text-muted);
+}
+.contact-form__input:focus {
+  border-color: var(--color-accent);
+}
+.contact-form__input--textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: "Inter", sans-serif;
+}
+.contact-form__input.is-error {
+  border-color: #ff4d4d;
+}
+.contact-form__error {
+  font-size: 0.75rem;
+  color: #ff4d4d;
+  min-height: 1em;
+}
+.contact-form__btn {
+  align-self: flex-start;
+  padding: 1rem 3rem;
+  background-color: var(--color-accent);
+  color: #0f0f0f;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.contact-form__btn:hover {
+  background-color: var(--color-accent-hover);
+}
+.contact-form__btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.contact-form__success {
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  min-height: 1em;
 }/*# sourceMappingURL=main.css.map */

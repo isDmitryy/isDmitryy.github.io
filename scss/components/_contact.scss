@@ -1,0 +1,123 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+
+.contact {
+  min-height: 100vh;
+  padding-block: $spacing-4xl;
+  background-color: var(--color-bg);
+  @include flex-center;
+
+  &__inner {
+    @include container;
+    max-width: 640px;
+  }
+
+  &__title {
+    margin-bottom: $spacing-md;
+    color: var(--color-text);
+  }
+
+  &__subtitle {
+    color: var(--color-text-muted);
+    margin-bottom: $spacing-3xl;
+    font-size: $font-size-lg;
+  }
+
+  &__links {
+    display: flex;
+    gap: $spacing-lg;
+    margin-top: $spacing-2xl;
+  }
+
+  &__link {
+    font-size: $font-size-sm;
+    color: var(--color-text-muted);
+    transition: color $transition-fast;
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xs;
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: var(--color-text);
+  }
+
+  &__input {
+    width: 100%;
+    padding: $spacing-md;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: $radius-md;
+    color: var(--color-text);
+    font-size: $font-size-base;
+    transition: border-color $transition-fast;
+    outline: none;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    &:focus {
+      border-color: var(--color-accent);
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 120px;
+      font-family: $font-family;
+    }
+
+    &.is-error {
+      border-color: #ff4d4d;
+    }
+  }
+
+  &__error {
+    font-size: $font-size-xs;
+    color: #ff4d4d;
+    min-height: 1em;
+  }
+
+  &__btn {
+    align-self: flex-start;
+    padding: $spacing-md $spacing-2xl;
+    background-color: var(--color-accent);
+    color: #0f0f0f;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    border-radius: $radius-md;
+    border: none;
+    cursor: pointer;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  &__success {
+    color: var(--color-accent);
+    font-size: $font-size-sm;
+    min-height: 1em;
+  }
+}

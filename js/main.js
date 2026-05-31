@@ -116,3 +116,73 @@ const animationObserver = new IntersectionObserver(
 );
 
 animatedElements.forEach((el) => animationObserver.observe(el));
+
+// ============================================
+// CONTACT FORM
+// ============================================
+
+const form = document.querySelector(".contact-form");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    if (!validateForm()) return;
+
+    const btn = form.querySelector(".contact-form__btn");
+    const success = form.querySelector(".contact-form__success");
+
+    btn.disabled = true;
+    btn.textContent = "Отправляю...";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (response.ok) {
+        success.textContent = "Сообщение отправлено! Отвечу в течение дня.";
+        form.reset();
+      } else {
+        success.textContent = "Ошибка отправки. Напиши напрямую в Telegram.";
+      }
+    } catch {
+      success.textContent = "Ошибка сети. Напиши напрямую в Telegram.";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Отправить";
+    }
+  });
+}
+
+function validateForm() {
+  let isValid = true;
+  const fields = form.querySelectorAll("[required]");
+
+  fields.forEach((field) => {
+    const error = field.parentElement.querySelector(".contact-form__error");
+    field.classList.remove("is-error");
+    error.textContent = "";
+
+    if (!field.value.trim()) {
+      showError(field, error, "Это поле обязательно");
+      isValid = false;
+    } else if (field.type === "email" && !isValidEmail(field.value)) {
+      showError(field, error, "Введи корректный email");
+      isValid = false;
+    }
+  });
+
+  return isValid;
+}
+
+function showError(field, errorEl, message) {
+  field.classList.add("is-error");
+  errorEl.textContent = message;
+}
+
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
