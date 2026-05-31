@@ -93,3 +93,26 @@ const observer = new IntersectionObserver(
 );
 
 sections.forEach((section) => observer.observe(section));
+
+// ============================================
+// SCROLL ANIMATIONS
+// ============================================
+
+const animatedElements = document.querySelectorAll(".fade-up");
+
+const animationObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        // Отключаем наблюдение после срабатывания
+        animationObserver.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.15,
+  },
+);
+
+animatedElements.forEach((el) => animationObserver.observe(el));
